@@ -3,13 +3,15 @@
 #include <time.h>
 using namespace std;
 
+// Accuracy function Declared...
 void accuracy(string &a, string &b, int &err, int &crr, float &ac);
 
-//
+
+//          __________Main_Function_________
 int main()
 {
 
-  string b = "I made this program for you";
+  string b = "I created this program for you :)";
   string a;
   int errors = 0;
   int correct = 0;
@@ -25,7 +27,7 @@ int main()
 
   cout << endl
        << "Press enter and type..." << endl;
-  cin.get();
+  cin.get(); 
   time(&starttime);
 
   getline(cin, a);
@@ -70,7 +72,8 @@ void accuracy(string &a, string &b, int &err, int &crr, float &ac)
   while (u < b.size())
   {
 
-    // __________(For_Spaces)__________
+    // __________(For_Blank_Spaces(" "))__________
+
     while (a[w] == x[0])
     {
       if (a[w] == b[u])
@@ -106,7 +109,11 @@ void accuracy(string &a, string &b, int &err, int &crr, float &ac)
     }
     // ________________________________
 
+
+
+
     // __________(For_Errors)__________
+
     while (b[u] != x[0])
     {
       if (u >= b.size())
@@ -145,6 +152,10 @@ void accuracy(string &a, string &b, int &err, int &crr, float &ac)
       }
     }
     // _________________________________
+
+
+
+
 
     if (u >= b.size())
     {

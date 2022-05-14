@@ -8,7 +8,7 @@ string select; // Global Variable...
 //            _______________ Functions Declaration _______________
 void selection(string &sen, string &cpy);
 void accuracy(string &, string &, int &, int &, float &);
-void PrintRes(float time, float net, float gross, float ac, int err, string sentence, int ts);
+void PrintResult(float time, float net, float gross, float ac, int err, string sentence, int ts);
 
 //                _______________ Main Function _______________
 int main()
@@ -51,7 +51,7 @@ int main()
   {
     net_wpm = 0;
   }
-  PrintRes(time, net_wpm, gross_wpm, acc, err, sentence, tsec);
+  PrintResult(time, net_wpm, gross_wpm, acc, err, sentence, tsec);
 
   return 0;
 }
@@ -59,6 +59,7 @@ int main()
 //           ____________________ Functions_Area ____________________
 
 //                __________ Defining_Accuracy_Function __________
+
 void accuracy(string &a, string &b, int &err, int &crr, float &ac)
 {
   int w = 0;
@@ -68,7 +69,8 @@ void accuracy(string &a, string &b, int &err, int &crr, float &ac)
   while (u < b.size())
   {
 
-    // __________(For_Spaces)__________
+    // __________(For_Blank_Spaces(" "))__________
+
     while (a[w] == x[0])
     {
       if (a[w] == b[u])
@@ -104,7 +106,11 @@ void accuracy(string &a, string &b, int &err, int &crr, float &ac)
     }
     // ________________________________
 
+
+
+
     // __________(For_Errors)__________
+
     while (b[u] != x[0])
     {
       if (u >= b.size())
@@ -143,6 +149,10 @@ void accuracy(string &a, string &b, int &err, int &crr, float &ac)
       }
     }
     // _________________________________
+
+
+
+
 
     if (u >= b.size())
     {
@@ -187,6 +197,11 @@ void accuracy(string &a, string &b, int &err, int &crr, float &ac)
 
   ac = (float(crr) / float(a.size())) * 100;
 }
+
+
+
+
+
 
 //       _______________ Defining_Selection_Function() _______________
 
@@ -725,8 +740,12 @@ void selection(string &sen, string &cpy)
   }
 }
 
+
+
+
 //       _______________ Defining_PrintRes_Function() _______________
-void PrintRes(float time, float net, float gross, float ac, int err, string sentence, int ts)
+
+void PrintResult(float time, float net, float gross, float ac, int err, string sentence, int ts)
 {
 
   cout << endl
